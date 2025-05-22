@@ -1,0 +1,50 @@
+# Grafo en PHP
+
+Este proyecto implementa una estructura de **grafo no dirigido** en el lenguaje PHP, utilizando programación orientada a objetos.
+
+## 📌 Descripción
+
+La clase `Grafo` permite representar un conjunto de vértices y las conexiones entre ellos (aristas). El grafo se construye y se imprime en consola utilizando métodos simples y directos.
+
+---
+
+## 🧱 Estructura de la Clase
+
+### Propiedades
+
+- `vertices`: Arreglo que contiene todos los vértices del grafo.
+- `aristas`: Arreglo asociativo que representa las conexiones entre los vértices.
+
+### Métodos
+
+#### `__construct()`
+Inicializa las estructuras internas del grafo como arreglos vacíos.
+
+#### `agregarVertices($vertice)`
+Agrega un nuevo vértice al grafo y crea su lista de adyacencia vacía.
+
+#### `agregarAristas($vertice1, $vertice2)`
+Crea una conexión bidireccional entre dos vértices (representa un grafo no dirigido).
+
+#### `imprimirGrafo()`
+Imprime cada vértice junto con sus conexiones (vértices adyacentes).
+
+---
+
+## 🔧 Ejemplo de Uso
+
+```php
+$miGrafo = new Grafo();
+
+$miGrafo->agregarVertices("A");
+$miGrafo->agregarVertices("B");
+$miGrafo->agregarVertices("C");
+$miGrafo->agregarVertices("D");
+
+$miGrafo->agregarAristas("A", "B");
+$miGrafo->agregarAristas("B", "C");
+$miGrafo->agregarAristas("C", "A");
+$miGrafo->agregarAristas("B", "D");
+
+echo "El grafo es: \n";
+$miGrafo->imprimirGrafo();
